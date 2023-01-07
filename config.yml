@@ -1,0 +1,5 @@
+pihole:
+   url: http://pi.hole/admin/api.php
+   query: summaryRaw
+   token: <get the token from Settings/API/Show API token>
+

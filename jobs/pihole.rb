@@ -1,9 +1,15 @@
-SCHEDULER.every '5s' do
-  require 'net/http'
-  require 'json'
-  require 'uri'
+require 'net/http'
+require 'json'
+require 'uri'
+require 'yaml'
 
-  uri = URI.parse('http://piholeserver/admin/api.php')
+config = YAML.load_file('config.yml')
+PIHOLE_URL = config['pihole']['url']
+PIHOLE_QUERY = config['pihole']['query']
+PIHOLE_TOKEN = config['pihole']['token']
+
+SCHEDULER.every '5s' do
+  uri = URI.parse("#{PIHOLE_URL}?#{PIHOLE_QUERY}&auth=#{PIHOLE_TOKEN}")
   http = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl = false
   request = Net::HTTP::Get.new(uri.request_uri)

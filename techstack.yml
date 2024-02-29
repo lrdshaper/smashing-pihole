@@ -2,7 +2,7 @@ repo_name: lrdshaper/smashing-pihole
 report_id: f79f53377852c20db094dc875a8f58da
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-05T09:24:10+00:00'
+timestamp: '2024-02-29T18:04:10+00:00'
 requested_by: lrdshaper
 provider: github
 branch: master
